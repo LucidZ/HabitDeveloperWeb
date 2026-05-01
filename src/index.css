@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-parchment: #E8E0D5;
+  --color-card-bg: #FFFFFF;
+  --color-dark-panel: #1A1A1A;
+  --color-gold: #D4A574;
+  --color-gold-95: rgba(212, 165, 116, 0.95);
+  --color-gold-tint: rgba(212, 165, 116, 0.08);
+  --color-gold-tint-border: rgba(212, 165, 116, 0.2);
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: rgba(0, 0, 0, 0.45);
+  --color-text-muted: rgba(0, 0, 0, 0.25);
+
+  --font-family-display: 'Cormorant Garamond', Georgia, serif;
+  --font-family-body: 'DM Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E8E0D5;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1A1A1A;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* Photo reveal simulation: dark → revealed gradient */
+.photo-dark {
+  filter: brightness(0.15) sepia(0.8) blur(6px);
+}
+
+.photo-mid {
+  filter: brightness(0.55) sepia(0.35) blur(2px);
+}
+
+.photo-revealed {
+  filter: brightness(1) sepia(0) blur(0);
+}
