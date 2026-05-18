@@ -219,7 +219,7 @@ function Home() {
                   }}
                 >
                   <span>📸</span>
-                  iOS App · Free 30-day trial
+                  iOS App · Free to start
                 </div>
               </div>
 
@@ -247,7 +247,7 @@ function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mb-12">
                 <AppStoreBadge />
                 <span className="font-body text-sm" style={{ color: 'rgba(0,0,0,0.35)' }}>
-                  $4.99/year after trial
+                  Free for 2 habits · Subscription to unlock more
                 </span>
               </div>
 
@@ -485,8 +485,8 @@ function Home() {
             className="font-body text-base leading-relaxed mb-10"
             style={{ color: 'rgba(255,255,255,0.5)', maxWidth: '420px', margin: '0 auto 2.5rem' }}
           >
-            Try Habit Developer free for 30 days. No commitment. After trial, $4.99/year — less
-            than a coffee.
+            Your first 2 habits are free — forever. Ready to build more? Unlock unlimited habits
+            with an annual subscription.
           </p>
           <AppStoreBadge />
           <p className="font-body text-xs mt-5" style={{ color: 'rgba(255,255,255,0.3)' }}>
