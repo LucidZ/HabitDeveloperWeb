@@ -196,57 +196,77 @@ function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="px-6 pt-20 pb-24 text-center">
+      <section className="px-6 pt-20 pb-24">
         <div
           ref={heroRef}
-          className="max-w-2xl mx-auto transition-all duration-1000"
+          className="max-w-5xl mx-auto transition-all duration-1000"
           style={{
             opacity: heroInView ? 1 : 0,
             transform: heroInView ? 'translateY(0)' : 'translateY(32px)',
           }}
         >
-          {/* Badge */}
-          <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-body text-xs font-medium mb-8"
-            style={{
-              backgroundColor: 'rgba(212,165,116,0.12)',
-              color: '#D4A574',
-              border: '1px solid rgba(212,165,116,0.3)',
-            }}
-          >
-            <span>📸</span>
-            iOS App · Free 30-day trial
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+
+            {/* Left: text */}
+            <div className="flex-1 text-center md:text-left">
+              <div className="flex justify-center md:justify-start">
+                <div
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-body text-xs font-medium mb-8"
+                  style={{
+                    backgroundColor: 'rgba(212,165,116,0.12)',
+                    color: '#D4A574',
+                    border: '1px solid rgba(212,165,116,0.3)',
+                  }}
+                >
+                  <span>📸</span>
+                  iOS App · Free 30-day trial
+                </div>
+              </div>
+
+              <h1
+                className="font-display font-semibold mb-6"
+                style={{
+                  color: '#1A1A1A',
+                  fontSize: 'clamp(2.75rem, 6vw, 4.5rem)',
+                  lineHeight: 1.05,
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                Develop your photos.<br />
+                <span style={{ color: '#D4A574' }}>Develop yourself.</span>
+              </h1>
+
+              <p
+                className="font-body text-lg leading-relaxed mb-10 mx-auto md:mx-0"
+                style={{ color: 'rgba(0,0,0,0.55)', maxWidth: '460px' }}
+              >
+                Your daily photo starts dark and blurry — like undeveloped film. Complete your habits
+                and watch it slowly reveal.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mb-12">
+                <AppStoreBadge />
+                <span className="font-body text-sm" style={{ color: 'rgba(0,0,0,0.35)' }}>
+                  $4.99/year after trial
+                </span>
+              </div>
+
+              <RevealStrip />
+            </div>
+
+            {/* Right: phone screenshot */}
+            <div className="flex-shrink-0">
+              <img
+                src="/assets/Habit%20Gallery.png"
+                alt="Habit Developer app showing the Habit Gallery with completed habits"
+                className="w-56 sm:w-64 md:w-[270px]"
+                style={{
+                  filter: 'drop-shadow(0 32px 56px rgba(0,0,0,0.2))',
+                }}
+              />
+            </div>
+
           </div>
-
-          <h1
-            className="font-display font-semibold mb-6"
-            style={{
-              color: '#1A1A1A',
-              fontSize: 'clamp(2.75rem, 8vw, 5rem)',
-              lineHeight: 1.05,
-              letterSpacing: '-0.01em',
-            }}
-          >
-            Develop your photos.<br />
-            <span style={{ color: '#D4A574' }}>Develop yourself.</span>
-          </h1>
-
-          <p
-            className="font-body text-lg leading-relaxed mb-10"
-            style={{ color: 'rgba(0,0,0,0.55)', maxWidth: '520px', margin: '0 auto 2.5rem' }}
-          >
-            Your daily photo starts dark and blurry — like undeveloped film. Complete your habits
-            and watch it slowly reveal.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <AppStoreBadge />
-            <span className="font-body text-sm" style={{ color: 'rgba(0,0,0,0.35)' }}>
-              $4.99/year after trial
-            </span>
-          </div>
-
-          <RevealStrip />
         </div>
       </section>
 
