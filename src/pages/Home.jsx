@@ -16,52 +16,6 @@ function useInView(threshold = 0.15) {
   return [ref, inView];
 }
 
-/* ─── Photo reveal preview strip ─── */
-function RevealStrip() {
-  const stages = [
-    { label: '0%', filterClass: 'photo-dark', opacity: 1 },
-    { label: '40%', filterClass: 'photo-mid', opacity: 0.85 },
-    { label: '95%', filterClass: '', opacity: 0.6 },
-    { label: '100%', filterClass: 'photo-revealed', opacity: 1 },
-  ];
-
-  return (
-    <div className="flex gap-2 justify-center">
-      {stages.map((s, i) => (
-        <div key={i} className="flex flex-col items-center gap-2">
-          <div
-            className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden ${s.filterClass}`}
-            style={{
-              background: `linear-gradient(135deg, #6B4E35 0%, #3D2B1F 50%, #1A0F0A 100%)`,
-              opacity: s.opacity,
-              transition: 'filter 0.4s ease',
-            }}
-          >
-            {/* Placeholder silhouette */}
-            <div className="w-full h-full flex items-center justify-center">
-              <svg viewBox="0 0 40 40" className="w-8 h-8 opacity-30" fill="white">
-                <circle cx="20" cy="14" r="6" />
-                <path d="M8 34c0-6.627 5.373-12 12-12s12 5.373 12 12" />
-              </svg>
-            </div>
-          </div>
-          <span
-            className="font-body text-xs"
-            style={{ color: i === 3 ? '#D4A574' : 'rgba(0,0,0,0.4)' }}
-          >
-            {s.label}
-          </span>
-        </div>
-      ))}
-      <div className="flex flex-col items-center justify-center ml-1">
-        <svg className="w-5 h-5" fill="none" stroke="#D4A574" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
 /* ─── Feature card ─── */
 function FeatureCard({ icon, title, body, delay = 0 }) {
   const [ref, inView] = useInView();
@@ -251,7 +205,6 @@ function Home() {
                 </span>
               </div>
 
-              <RevealStrip />
             </div>
 
             {/* Right: phone screenshot */}
@@ -273,10 +226,11 @@ function Home() {
       {/* ── Darkroom mechanic ── */}
       <section
         ref={mechanicRef}
-        className="px-6 py-20"
+        className="py-20"
         style={{ backgroundColor: '#1A1A1A' }}
       >
-        <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="px-6 max-w-5xl mx-auto mb-14">
           <div
             className="transition-all duration-700"
             style={{
@@ -297,105 +251,76 @@ function Home() {
               Every habit is a darkroom.
             </h2>
             <p
-              className="font-body text-base leading-relaxed mb-12"
+              className="font-body text-base leading-relaxed"
               style={{ color: 'rgba(255,255,255,0.5)', maxWidth: '520px' }}
             >
               Each day, a photo from your library is loaded — but hidden. Complete your tasks and
               watch it develop. The final reveal needs one more thing.
             </p>
           </div>
+        </div>
 
+        {/* Paired screenshot + step — width on the wrapper div so max-width:100% on img resolves correctly */}
+        <div
+          className="overflow-x-auto px-6"
+          style={{
+            opacity: mechanicInView ? 1 : 0,
+            transition: 'opacity 0.8s ease',
+            transitionDelay: '200ms',
+          }}
+        >
           <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
-            style={{
-              transition: 'opacity 0.7s ease, transform 0.7s ease',
-              opacity: mechanicInView ? 1 : 0,
-              transitionDelay: '150ms',
-            }}
+            className="flex items-end gap-6 md:gap-8 md:justify-center"
+            style={{ minWidth: 'max-content' }}
           >
-            <div
-              className="rounded-2xl p-6 space-y-6"
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.07)',
-              }}
-            >
-              <StepCard
-                number="1"
-                title="Photo loaded, locked"
-                body="A photo from your library is selected. It's dark, blurred, tinted sepia — unexposed."
-                delay={0}
-              />
-              <StepCard
-                number="2"
-                title="Tasks complete → light enters"
-                body="Every task you check off lifts a little darkness. The sepia fades. Details emerge."
-                delay={80}
-              />
-              <StepCard
-                number="3"
-                title="95% — almost there"
-                body="Tasks alone reveal the photo to 95%. The last 5% needs something different."
-                delay={160}
-              />
-              <StepCard
-                number="4"
-                title="Shake to develop"
-                body="Give your phone a shake. A flash, a haptic pulse — and the photo is fully revealed."
-                delay={240}
-              />
-            </div>
-
-            {/* Visual demo column */}
-            <div className="flex items-center justify-center">
-              <div className="relative w-56 h-56">
-                {/* Stack of "developing" photo cards */}
-                <div
-                  className="absolute inset-0 rounded-2xl"
-                  style={{
-                    background: 'linear-gradient(135deg, #3D2010 0%, #180E08 100%)',
-                    transform: 'rotate(-4deg) scale(0.92)',
-                    opacity: 0.5,
-                  }}
-                />
-                <div
-                  className="absolute inset-0 rounded-2xl"
-                  style={{
-                    background: 'linear-gradient(135deg, #5C3420 0%, #2A1510 100%)',
-                    transform: 'rotate(-2deg) scale(0.96)',
-                    opacity: 0.7,
-                  }}
-                />
-                <div
-                  className="absolute inset-0 rounded-2xl overflow-hidden"
-                  style={{
-                    background: 'linear-gradient(135deg, #8B5E3C 0%, #4A2E1A 40%, #1A0D06 100%)',
-                    boxShadow: '0 12px 40px rgba(0,0,0,0.5)',
-                  }}
-                >
-                  {/* Progress bar overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="font-body text-xs font-medium" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                        Morning Run
-                      </span>
-                      <span className="font-body text-xs" style={{ color: '#D4A574' }}>
-                        2 / 3
-                      </span>
-                    </div>
+            {[
+              { n: '1', src: '/assets/cat%20-%2001.png', title: 'Photo loaded, locked',    body: 'Dark, blurred, sepia — a photo waiting to be earned.' },
+              { n: '2', src: '/assets/cat%20-%2002.png', title: 'Tasks unlock the light',  body: 'Every check-off lifts the darkness a little more.' },
+              { n: '3', src: '/assets/cat%20-%2003.png', title: '67% — almost there',      body: 'Tasks get you most of the way. The rest needs something different.' },
+              { n: '4', src: '/assets/cat%20-%2004.png', title: 'Shake to develop',        body: 'A shake, a flash, a haptic pulse — fully revealed.' },
+            ].map(({ n, src, title, body }, i) => {
+              const isFinal = i === 3;
+              // Width on the wrapper — img uses w-full so max-width:100% resolves to wrapper width, not a grid column
+              const colWidths = ['w-36 md:w-44', 'w-44 md:w-52', 'w-52 md:w-[220px]', 'w-64 md:w-[270px]'];
+              return (
+                <div key={n} className={`flex-shrink-0 flex flex-col ${colWidths[i]}`}>
+                  {/*
+                    The cat images are wide marketing shots: the phone is centered inside a landscape
+                    frame with lots of whitespace. Fix: lock this container to the phone aspect ratio
+                    + overflow:hidden so object-fit:cover zooms in until the phone fills the crop.
+                  */}
+                  <div
+                    className="w-full overflow-hidden"
+                    style={{
+                      aspectRatio: '9 / 19.5',
+                      filter: isFinal
+                        ? 'drop-shadow(0 24px 56px rgba(212,165,116,0.55))'
+                        : 'drop-shadow(0 8px 24px rgba(0,0,0,0.6))',
+                    }}
+                  >
+                    <img
+                      src={src}
+                      alt={title}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                  <div className="mt-5">
                     <div
-                      className="w-full h-1.5 rounded-full overflow-hidden"
-                      style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
+                      className="w-7 h-7 rounded-full flex items-center justify-center font-body font-medium text-xs mb-3"
+                      style={{ backgroundColor: 'rgba(255,255,255,0.07)', color: '#D4A574' }}
                     >
-                      <div
-                        className="h-full rounded-full"
-                        style={{ width: '67%', backgroundColor: 'rgba(212,165,116,0.95)' }}
-                      />
+                      {n}
                     </div>
+                    <h4 className="font-body font-medium text-sm mb-1" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                      {title}
+                    </h4>
+                    <p className="font-body text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                      {body}
+                    </p>
                   </div>
                 </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
