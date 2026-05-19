@@ -9,15 +9,15 @@ const FAQ = [
   },
   {
     q: 'What\'s included in the free version vs. Premium?',
-    a: 'Habit Developer is free to use with core tracking features. Habit Developer Premium ($4.99/year) unlocks unlimited habits, advanced stats, and more. Your data is never deleted if you downgrade.',
+    a: 'The free version includes up to 2 habits — enough to get a feel for how the app works. If you find it clicks and want to add more, a small annual subscription unlocks unlimited habits. Your data is never deleted if you downgrade.',
   },
   {
     q: 'How do I cancel my subscription?',
-    a: 'Open the Settings app on your iPhone → Apple ID → Subscriptions → Habit Developer → Cancel Subscription. You keep access until the end of the current billing period.',
+    a: 'Open the Settings app on your iPhone → Apple ID → Subscriptions → Habit Developer → Cancel Subscription. You keep access until the end of the current billing period. If there\'s a problem we can fix or a feature you\'d love to see, reach out first — we\'d genuinely love to give it a go. If you\'d still like a refund after that, you can request one directly through Apple.',
   },
   {
     q: 'Where are my photos and habits stored?',
-    a: 'Everything stays on your device. Your photos are never uploaded to any server, and habit data is stored locally and synced across your own devices via iCloud. Because we don\'t hold your data on our servers, we can\'t recover it if it\'s lost — for example, after a device reset or an iCloud issue. We recommend keeping regular device backups.',
+    a: 'Everything stays on your device. Your own library photos are never uploaded to any server, and habit data is stored locally and synced across your own devices via iCloud. Photos from curated external sources (NASA, Pexels, etc.) are temporarily cached on-device — since we don\'t own those images, they aren\'t stored permanently. Because we don\'t hold your data on our servers, we can\'t recover it if it\'s lost — for example, after a device reset or an iCloud issue. We recommend keeping regular device backups.',
   },
   {
     q: 'Where do the habit photos come from?',
@@ -25,7 +25,8 @@ const FAQ = [
   },
   {
     q: 'The app isn\'t working as expected. What should I do?',
-    a: 'Try closing and reopening the app. If the issue persists, use the contact form above with a description of the problem and your iOS version.',
+    a: 'Try closing and reopening the app. If the issue persists, please reach out — because we don\'t collect usage data, direct feedback is the main way we understand how the app is working for people.',
+    showContact: true,
   },
 ];
 
@@ -88,6 +89,8 @@ function Support() {
             </h2>
             <p className="font-body leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>
               Have a question, found a bug, or want to share feedback? We read every message.
+              Because we don't collect usage data, direct feedback is the main way we understand
+              how the app is working for people — it genuinely makes a difference.
             </p>
             <button
               onClick={() => setModalOpen(true)}
@@ -114,7 +117,7 @@ function Support() {
             </h2>
             <div className="space-y-4">
               {FAQ.map((item, i) => (
-                <FAQItem key={i} question={item.q} answer={item.a} />
+                <FAQItem key={i} question={item.q} answer={item.a} showContact={item.showContact} onContact={() => setModalOpen(true)} />
               ))}
             </div>
           </div>
@@ -149,7 +152,7 @@ function Support() {
   );
 }
 
-function FAQItem({ question, answer }) {
+function FAQItem({ question, answer, showContact, onContact }) {
   return (
     <div
       className="rounded-2xl p-6"
@@ -161,6 +164,22 @@ function FAQItem({ question, answer }) {
       <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(0,0,0,0.55)' }}>
         {answer}
       </p>
+      {showContact && (
+        <button
+          onClick={onContact}
+          className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg font-body font-medium text-sm transition-opacity hover:opacity-80"
+          style={{
+            backgroundColor: 'rgba(212,165,116,0.12)',
+            color: '#C4925A',
+            border: '1px solid rgba(212,165,116,0.3)',
+          }}
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Send a message
+        </button>
+      )}
     </div>
   );
 }

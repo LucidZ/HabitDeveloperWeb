@@ -58,8 +58,8 @@ function Privacy() {
           <Section title="Overview">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               Habit Developer is designed with your privacy as a first principle. We do not collect,
-              transmit, or store your personal data on any server. Your habits, tasks, and history
-              live only on your device.
+              transmit, or store your personal data on any server. Your habits, tasks, photos, and
+              history live only on your device.
             </p>
           </Section>
 
@@ -76,11 +76,9 @@ function Privacy() {
               </li>
               <li>
                 <strong style={{ color: '#1A1A1A' }}>Curated external sources</strong> — the app
-                fetches images from public, royalty-free APIs (NASA Astronomy Picture of the Day,
-                Pexels, the Cleveland Museum of Art, and Wikimedia Commons). These requests are
-                outbound-only: no personal data is sent, only a standard HTTP request that
-                includes your IP address as part of normal internet traffic. No user-identifying
-                information is transmitted.
+                fetches images from public, royalty-free APIs (see Third-Party Services below).
+                These are outbound-only requests that include your IP address as part of normal
+                internet traffic, but no personal data or user-identifying information.
               </li>
             </ul>
           </Section>
@@ -112,14 +110,15 @@ function Privacy() {
           <Section title="Third-Party Services">
             <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
               The app connects to the following external services solely to fetch curated content.
-              No personal data, account information, or usage data is sent to any of them.
+              These are outbound-only HTTP requests; your IP address is included as part of normal
+              internet traffic, but no personal data, account information, or user-identifying
+              information is sent.
             </p>
             <ul className="font-body leading-relaxed list-disc pl-5 space-y-2" style={{ color: 'rgba(0,0,0,0.65)' }}>
               <li><strong style={{ color: '#1A1A1A' }}>NASA APOD API</strong> — daily astronomy photographs from NASA</li>
               <li><strong style={{ color: '#1A1A1A' }}>Pexels</strong> — curated stock photography</li>
               <li><strong style={{ color: '#1A1A1A' }}>Cleveland Museum of Art</strong> — open-access CC0 artwork</li>
               <li><strong style={{ color: '#1A1A1A' }}>Wikimedia Commons</strong> — Picture of the Day</li>
-              <li><strong style={{ color: '#1A1A1A' }}>Apple App Store Connect</strong> — aggregate, anonymized download and crash statistics provided automatically by Apple as part of iOS distribution</li>
             </ul>
             <p className="font-body leading-relaxed mt-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
               We do not use any third-party analytics or tracking SDKs.

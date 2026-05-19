@@ -68,18 +68,22 @@ function Terms() {
               unlock premium features. Subscriptions are billed through your Apple ID at the price
               shown at the time of purchase.
             </p>
-            <ul className="font-body leading-relaxed list-disc pl-5 space-y-2" style={{ color: 'rgba(0,0,0,0.65)' }}>
+            <ul className="font-body leading-relaxed list-disc pl-5 space-y-2 mb-4" style={{ color: 'rgba(0,0,0,0.65)' }}>
               <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current billing period.</li>
               <li>You can manage or cancel your subscription at any time in your Apple ID account settings.</li>
               <li>Cancelling stops future charges but does not end access for the remainder of the paid period.</li>
             </ul>
-          </Section>
-
-          <Section title="Refund Policy">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              All purchases are processed by Apple through the App Store. Javi Labs does not handle
-              billing directly and cannot issue refunds. To request a refund, please use Apple's
-              standard refund process at{' '}
+              If there's a problem we can fix or a feature you'd love to see, please{' '}
+              <button
+                onClick={() => setModalOpen(true)}
+                style={{ color: '#D4A574' }}
+                className="hover:opacity-70 transition-opacity underline"
+              >
+                reach out
+              </button>
+              {' '}first — we'd genuinely love to give it a go. If you'd still like a refund,
+              all purchases are processed by Apple and can be requested at{' '}
               <a
                 href="https://reportaproblem.apple.com"
                 target="_blank"
@@ -119,12 +123,27 @@ function Terms() {
           </Section>
 
           <Section title="Disclaimer">
-            <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+            <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
               Habit Developer is provided <strong style={{ color: '#1A1A1A' }}>"as is"</strong> without
               warranty of any kind, express or implied. We do not guarantee that the app will be
-              error-free, uninterrupted, or meet your specific requirements. To the fullest extent
-              permitted by applicable law, Javi Labs disclaims all warranties and liability for any
-              damages arising from your use of the app.
+              error-free, uninterrupted, or meet your specific requirements.
+            </p>
+            <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              To the fullest extent permitted by applicable law, Javi Labs disclaims all warranties
+              and will not be liable for any indirect, incidental, special, consequential, or punitive
+              damages, or any loss of data, arising from your use of the app. Our total liability to
+              you for any claim will not exceed the amount you paid for your subscription in the
+              twelve months preceding the claim.
+            </p>
+            <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              Because all data is stored locally on your device, Javi Labs is not responsible for
+              loss of habit data, streaks, or history resulting from device failure, a device reset,
+              or iCloud issues. We recommend keeping regular device backups.
+            </p>
+            <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              The app displays content fetched from third-party sources (including NASA, Pexels, the
+              Cleveland Museum of Art, and Wikimedia Commons). Javi Labs is not responsible for the
+              accuracy, availability, or content of materials provided by these services.
             </p>
           </Section>
 
