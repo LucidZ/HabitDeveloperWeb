@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ContactModal from '../components/ContactModal';
 
 const FAQ = [
   {
@@ -24,11 +25,13 @@ const FAQ = [
   },
   {
     q: 'The app isn\'t working as expected. What should I do?',
-    a: 'Try closing and reopening the app. If the issue persists, email us at feedback@javilabs.dev with a description of the problem and your iOS version.',
+    a: 'Try closing and reopening the app. If the issue persists, use the contact form above with a description of the problem and your iOS version.',
   },
 ];
 
 function Support() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -86,8 +89,8 @@ function Support() {
             <p className="font-body leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>
               Have a question, found a bug, or want to share feedback? We read every message.
             </p>
-            <a
-              href="mailto:feedback@javilabs.dev"
+            <button
+              onClick={() => setModalOpen(true)}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-body font-medium text-sm transition-opacity hover:opacity-80"
               style={{
                 backgroundColor: 'rgba(212,165,116,0.95)',
@@ -97,8 +100,8 @@ function Support() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              feedback@javilabs.dev
-            </a>
+              Send a message
+            </button>
           </div>
 
           {/* FAQ */}
@@ -141,6 +144,7 @@ function Support() {
       </main>
 
       <Footer />
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 }
