@@ -179,6 +179,9 @@ function Footer() {
           <Link to="/privacy" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
             Privacy
           </Link>
+          <Link to="/terms" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
+            Terms
+          </Link>
         </div>
       </div>
     </footer>

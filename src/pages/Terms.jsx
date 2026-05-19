@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ContactModal from '../components/ContactModal';
 
-function Privacy() {
+function Terms() {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function Privacy() {
                 className="font-display text-3xl md:text-4xl font-semibold"
                 style={{ color: 'rgba(255,255,255,0.9)' }}
               >
-                Privacy Policy
+                Terms of Use
               </h1>
               <p className="font-body text-sm mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
                 Habit Developer · Last updated: May 2026
@@ -55,94 +55,90 @@ function Privacy() {
             </p>
           </Section>
 
-          <Section title="Overview">
+          <Section title="Agreement">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              Habit Developer is designed with your privacy as a first principle. We do not collect,
-              transmit, or store your personal data on any server. Your habits, tasks, and history
-              live only on your device.
+              By downloading or using Habit Developer, you agree to these Terms of Use. If you do not
+              agree, do not use the app.
             </p>
           </Section>
 
-          <Section title="Photos">
+          <Section title="Subscriptions">
             <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              Each habit's daily reveal can show one of two types of photos — your choice when setting
-              up the habit:
+              Habit Developer offers optional auto-renewing subscriptions (monthly and annual) that
+              unlock premium features. Subscriptions are billed through your Apple ID at the price
+              shown at the time of purchase.
             </p>
             <ul className="font-body leading-relaxed list-disc pl-5 space-y-2" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              <li>
-                <strong style={{ color: '#1A1A1A' }}>Your photo library</strong> — photos are read
-                locally from your device and are never uploaded, shared, or transmitted off your
-                device in any form.
-              </li>
-              <li>
-                <strong style={{ color: '#1A1A1A' }}>Curated external sources</strong> — the app
-                fetches images from public, royalty-free APIs (NASA Astronomy Picture of the Day,
-                Pexels, the Cleveland Museum of Art, and Wikimedia Commons). These requests are
-                outbound-only: no personal data is sent, only a standard HTTP request that
-                includes your IP address as part of normal internet traffic. No user-identifying
-                information is transmitted.
-              </li>
+              <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current billing period.</li>
+              <li>You can manage or cancel your subscription at any time in your Apple ID account settings.</li>
+              <li>Cancelling stops future charges but does not end access for the remainder of the paid period.</li>
             </ul>
           </Section>
 
-          <Section title="Analytics">
+          <Section title="Refund Policy">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              We do not collect any personal data or usage analytics from within the app. The only
-              analytics we use are Apple's App Store Connect aggregate statistics (downloads, crash
-              reports), which Apple provides automatically and do not include any personally
-              identifiable information.
+              All purchases are processed by Apple through the App Store. Javi Labs does not handle
+              billing directly and cannot issue refunds. To request a refund, please use Apple's
+              standard refund process at{' '}
+              <a
+                href="https://reportaproblem.apple.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#D4A574' }}
+                className="hover:opacity-70 transition-opacity underline"
+              >
+                reportaproblem.apple.com
+              </a>
+              .
             </p>
           </Section>
 
-          <Section title="Data Storage">
+          <Section title="Data Use">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              All app data — your habits, tasks, streaks, and completion history — is stored locally
-              on your device using the device's secure storage. No data is sent to our servers.
+              Your habit data, tasks, and history are stored locally on your device and are never
+              transmitted to our servers. The app fetches content from public third-party APIs (such
+              as NASA and Pexels) to display curated photos; no personal data is sent as part of these
+              requests. For full details, see our{' '}
+              <Link
+                to="/privacy"
+                style={{ color: '#D4A574' }}
+                className="hover:opacity-70 transition-opacity underline"
+              >
+                Privacy Policy
+              </Link>
+              .
             </p>
           </Section>
 
-          <Section title="In-App Purchases">
+          <Section title="Acceptable Use">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              Habit Developer offers optional subscriptions (monthly and annual) processed entirely
-              through Apple's App Store. Javi Labs does not receive or store your payment information.
-              All billing and receipt validation is handled by Apple.
+              You agree to use Habit Developer only for lawful purposes and in accordance with these
+              terms. You may not attempt to reverse engineer, decompile, or otherwise extract the
+              source code of the app.
             </p>
           </Section>
 
-          <Section title="Third-Party Services">
-            <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              The app connects to the following external services solely to fetch curated content.
-              No personal data, account information, or usage data is sent to any of them.
-            </p>
-            <ul className="font-body leading-relaxed list-disc pl-5 space-y-2" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              <li><strong style={{ color: '#1A1A1A' }}>NASA APOD API</strong> — daily astronomy photographs from NASA</li>
-              <li><strong style={{ color: '#1A1A1A' }}>Pexels</strong> — curated stock photography</li>
-              <li><strong style={{ color: '#1A1A1A' }}>Cleveland Museum of Art</strong> — open-access CC0 artwork</li>
-              <li><strong style={{ color: '#1A1A1A' }}>Wikimedia Commons</strong> — Picture of the Day</li>
-              <li><strong style={{ color: '#1A1A1A' }}>Apple App Store Connect</strong> — aggregate, anonymized download and crash statistics provided automatically by Apple as part of iOS distribution</li>
-            </ul>
-            <p className="font-body leading-relaxed mt-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              We do not use any third-party analytics or tracking SDKs.
-            </p>
-          </Section>
-
-          <Section title="Children">
+          <Section title="Disclaimer">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              Habit Developer is not directed at children under 13. We do not knowingly collect
-              information from children under 13.
+              Habit Developer is provided <strong style={{ color: '#1A1A1A' }}>"as is"</strong> without
+              warranty of any kind, express or implied. We do not guarantee that the app will be
+              error-free, uninterrupted, or meet your specific requirements. To the fullest extent
+              permitted by applicable law, Javi Labs disclaims all warranties and liability for any
+              damages arising from your use of the app.
             </p>
           </Section>
 
           <Section title="Changes">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              We may update this policy as the app evolves. The "last updated" date at the top of
-              this page will reflect any changes.
+              We may update these terms as the app evolves. Continued use of the app after changes
+              are posted constitutes your acceptance of the revised terms. The "last updated" date
+              at the top of this page will reflect any changes.
             </p>
           </Section>
 
           <Section title="Contact">
             <p className="font-body leading-relaxed mb-4" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              Questions about this policy?{' '}
+              Questions about these terms?{' '}
               <button
                 onClick={() => setModalOpen(true)}
                 style={{ color: '#D4A574' }}
@@ -153,6 +149,7 @@ function Privacy() {
               .
             </p>
           </Section>
+
         </div>
       </main>
 
@@ -192,11 +189,11 @@ function Footer() {
           <Link to="/" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
             Home
           </Link>
+          <Link to="/privacy" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
+            Privacy
+          </Link>
           <Link to="/support" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
             Support
-          </Link>
-          <Link to="/terms" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
-            Terms
           </Link>
         </div>
       </div>
@@ -204,4 +201,4 @@ function Footer() {
   );
 }
 
-export default Privacy;
+export default Terms;
