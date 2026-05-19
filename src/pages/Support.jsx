@@ -8,8 +8,8 @@ const FAQ = [
     a: 'Each habit is paired with a photo from your library. The photo starts dark and blurry — like undeveloped film — and gradually clears as you complete your daily tasks. Once you hit 95% completion, give your phone a shake to trigger the final reveal.',
   },
   {
-    q: 'What happens when my trial ends?',
-    a: 'After your 30-day free trial, the app requires a Habit Developer Premium subscription ($4.99/year) to continue tracking. Your data is never deleted — subscribing restores full access instantly.',
+    q: 'What\'s included in the free version vs. Premium?',
+    a: 'Habit Developer is free to use with core tracking features. Habit Developer Premium ($4.99/year) unlocks unlimited habits, advanced stats, and more. Your data is never deleted if you downgrade.',
   },
   {
     q: 'How do I cancel my subscription?',
@@ -17,11 +17,11 @@ const FAQ = [
   },
   {
     q: 'Where are my photos and habits stored?',
-    a: 'Everything stays on your device. Your photos are never uploaded to any server. Habit data is stored locally, with your trial start date synced across your own devices via iCloud.',
+    a: 'Everything stays on your device. Your photos are never uploaded to any server, and habit data is stored locally and synced across your own devices via iCloud. Because we don\'t hold your data on our servers, we can\'t recover it if it\'s lost — for example, after a device reset or an iCloud issue. We recommend keeping regular device backups.',
   },
   {
-    q: 'Can I use my own photos?',
-    a: 'Yes — Habit Developer picks a photo from your library each day. You can also choose a specific photo for any habit from within the app.',
+    q: 'Where do the habit photos come from?',
+    a: 'You can use photos from your own library, or choose from a curated set of sources: NASA\'s Astronomy Picture of the Day, Wikimedia\'s Picture of the Day, the Cleveland Museum of Art collection, and Pexels. Each habit can have its own source.',
   },
   {
     q: 'The app isn\'t working as expected. What should I do?',
