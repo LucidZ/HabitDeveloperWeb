@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ContactModal from '../components/ContactModal';
 
 function Privacy() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -139,14 +142,14 @@ function Privacy() {
 
           <Section title="Contact">
             <p className="font-body leading-relaxed mb-4" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              Questions about this policy? Reach out at{' '}
-              <a
-                href="mailto:feedback@javilabs.dev"
+              Questions about this policy?{' '}
+              <button
+                onClick={() => setModalOpen(true)}
                 style={{ color: '#D4A574' }}
-                className="hover:opacity-70 transition-opacity"
+                className="hover:opacity-70 transition-opacity underline"
               >
-                feedback@javilabs.dev
-              </a>
+                Get in touch
+              </button>
               .
             </p>
           </Section>
@@ -154,6 +157,7 @@ function Privacy() {
       </main>
 
       <Footer />
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 }
