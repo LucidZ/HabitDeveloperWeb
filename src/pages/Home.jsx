@@ -260,19 +260,16 @@ function Home() {
           </div>
         </div>
 
-        {/* Paired screenshot + step — width on the wrapper div so max-width:100% on img resolves correctly */}
+        {/* Paired screenshot + step — responsive grid: 4 col → 2×2 → 1×4 */}
         <div
-          className="overflow-x-auto px-6"
+          className="px-6 max-w-5xl mx-auto"
           style={{
             opacity: mechanicInView ? 1 : 0,
             transition: 'opacity 0.8s ease',
             transitionDelay: '200ms',
           }}
         >
-          <div
-            className="flex items-end gap-6 md:gap-8 md:justify-center"
-            style={{ minWidth: 'max-content' }}
-          >
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8">
             {[
               { n: '1', src: '/assets/cat%20-%2001.png', title: 'Photo loaded, locked',    body: 'Dark, blurred, sepia — a photo waiting to be earned.' },
               { n: '2', src: '/assets/cat%20-%2002.png', title: 'Tasks unlock the light',  body: 'Every check-off lifts the darkness a little more.' },
@@ -280,15 +277,8 @@ function Home() {
               { n: '4', src: '/assets/cat%20-%2004.png', title: 'Shake to develop',        body: 'A shake, a flash, a haptic pulse — fully revealed.' },
             ].map(({ n, src, title, body }, i) => {
               const isFinal = i === 3;
-              // Width on the wrapper — img uses w-full so max-width:100% resolves to wrapper width, not a grid column
-              const colWidths = ['w-36 md:w-44', 'w-44 md:w-52', 'w-52 md:w-[220px]', 'w-64 md:w-[270px]'];
               return (
-                <div key={n} className={`flex-shrink-0 flex flex-col ${colWidths[i]}`}>
-                  {/*
-                    The cat images are wide marketing shots: the phone is centered inside a landscape
-                    frame with lots of whitespace. Fix: lock this container to the phone aspect ratio
-                    + overflow:hidden so object-fit:cover zooms in until the phone fills the crop.
-                  */}
+                <div key={n} className="flex flex-col">
                   <div
                     className="w-full overflow-hidden"
                     style={{
