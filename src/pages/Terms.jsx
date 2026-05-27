@@ -63,7 +63,9 @@ function Terms() {
             <p className="font-body leading-relaxed mt-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
               These Terms apply to all users of the App, regardless of platform. Your continued use of
               the App following any update to these Terms constitutes acceptance of the revised Terms.
-              We will notify you of material changes by updating the "Last Updated" date above.
+              We will notify you of material changes by updating the "Last Updated" date above
+              and, where practicable, by providing notice through an in-app notification or
+              other reasonable means prior to the change taking effect.
             </p>
           </Section>
 
@@ -143,9 +145,11 @@ function Terms() {
             </Subsection>
             <Subsection title="5.3 Price Changes">
               <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-                We reserve the right to change subscription prices. If your price changes, we will
-                notify you in advance through the App Store or Play Store, and you may cancel
-                before the change takes effect.
+                We reserve the right to change subscription prices. For Apple App Store
+                subscriptions, price increases require at least 30 days' advance notice in
+                accordance with Apple's policies. We will notify you in advance through the
+                applicable App Store or Play Store, and you may cancel before the change takes
+                effect.
               </p>
             </Subsection>
             <Subsection title="5.4 Refunds">
@@ -228,8 +232,9 @@ function Terms() {
             <Subsection title="7.5 Remote Photo Sources">
               <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 When you use curated photo collections, the App fetches images from the following
-                third-party services. No personal data is transmitted with these requests — only
-                content filters and date parameters:
+                third-party services. As with any internet request, your IP address is transmitted
+                to these services as part of standard internet protocol; no other identifying data
+                is included in these requests:
               </p>
               <ul className="font-body leading-relaxed list-disc pl-5 space-y-2" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 <li><strong style={{ color: '#1A1A1A' }}>Pexels</strong> (pexels.com) — curated photography</li>
@@ -339,7 +344,9 @@ function Terms() {
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               You agree to indemnify, defend, and hold harmless Javi Labs LLC from and against any
               claims, liabilities, damages, losses, and expenses (including legal fees) arising out
-              of your use of the App in violation of these Terms.
+              of your use of the App in violation of these Terms. This section does not apply to
+              consumers in jurisdictions where such indemnification obligations are prohibited or
+              limited by applicable law.
             </p>
           </Section>
 
@@ -359,17 +366,22 @@ function Terms() {
           <Section title="15. Changes to the App">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               We reserve the right to modify, suspend, or discontinue the App or any feature at any
-              time, with or without notice. We are not liable to you or any third party for any
-              modification, suspension, or discontinuation of the App.
+              time. Where practicable, we will provide advance notice of material changes. If we
+              permanently discontinue the App, we will provide reasonable advance notice and, where
+              required by applicable law, offer pro-rated refunds to active paid subscribers for
+              unused subscription periods. We are not otherwise liable to you or any third party
+              for any modification, suspension, or discontinuation of the App.
             </p>
           </Section>
 
           <Section title="16. Termination">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              We may suspend or terminate your access to the App if you violate these Terms. You
-              may stop using the App at any time. Sections 8 (Intellectual Property), 11
-              (Disclaimer of Warranties), 12 (Limitation of Liability), 13 (Indemnification), and
-              14 (Governing Law) survive termination.
+              We may suspend or terminate your access to the App if you violate these Terms. If
+              your access is terminated for cause, your subscription will be cancelled as of the
+              termination date and no refund will be issued for any unused portion of a prepaid
+              subscription period. You may stop using the App at any time. Sections 8 (Intellectual
+              Property), 11 (Disclaimer of Warranties), 12 (Limitation of Liability), 13
+              (Indemnification), and 14 (Governing Law) survive termination.
             </p>
           </Section>
 
@@ -452,7 +464,49 @@ function Terms() {
             </p>
           </Section>
 
-          <Section title="19. Entire Agreement">
+          <Section title="19. Miscellaneous">
+            <Subsection title="19.1 Assignment">
+              <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+                You may not assign or transfer your rights or obligations under these Terms without
+                our prior written consent. We may assign these Terms in connection with a merger,
+                acquisition, reorganization, or sale of assets, or by operation of law, without
+                your consent.
+              </p>
+            </Subsection>
+            <Subsection title="19.2 No Waiver">
+              <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+                Our failure to enforce any right or provision of these Terms will not constitute a
+                waiver of that right or provision. Any waiver must be in writing and signed by an
+                authorized representative of Javi Labs LLC to be effective.
+              </p>
+            </Subsection>
+            <Subsection title="19.3 Export Controls">
+              <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+                You agree to comply with all applicable export control laws and regulations. You
+                represent that you are not located in, under the control of, or a national or
+                resident of any country subject to a U.S. Government embargo, and that you are not
+                listed on any U.S. Government list of prohibited or restricted parties.
+              </p>
+            </Subsection>
+          </Section>
+
+          <Section title="20. California Residents">
+            <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              If you are a California resident, you may have additional rights under the California
+              Consumer Privacy Act ("CCPA"). Because the App stores all data locally on your device
+              and we do not collect, sell, or share personal information as defined by the CCPA in
+              the course of normal App usage, most CCPA rights — including access, deletion, and
+              opt-out of sale — are satisfied by design.
+            </p>
+            <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              Note that when the App fetches curated photos from third-party services (see Section
+              7.5), your IP address is transmitted to those third parties as part of standard
+              internet protocol. We do not control how those services handle that information. To
+              exercise any CCPA rights, contact us using the link in the Contact section below.
+            </p>
+          </Section>
+
+          <Section title="21. Entire Agreement">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               These Terms, together with our{' '}
               <Link
@@ -467,7 +521,7 @@ function Terms() {
             </p>
           </Section>
 
-          <Section title="20. Contact">
+          <Section title="22. Contact">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               Questions about these Terms?{' '}
               <button
