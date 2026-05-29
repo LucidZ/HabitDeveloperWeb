@@ -84,11 +84,27 @@ function Privacy() {
           </Section>
 
           <Section title="Analytics">
+            <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              <strong style={{ color: '#1A1A1A' }}>In the app:</strong> We do not collect any
+              personal data or usage analytics from within the app. The only analytics we use are
+              Apple's App Store Connect aggregate statistics (downloads, crash reports), which Apple
+              provides automatically and do not include any personally identifiable information. We
+              do not use any third-party analytics or tracking SDKs in the app.
+            </p>
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              We do not collect any personal data or usage analytics from within the app. The only
-              analytics we use are Apple's App Store Connect aggregate statistics (downloads, crash
-              reports), which Apple provides automatically and do not include any personally
-              identifiable information.
+              <strong style={{ color: '#1A1A1A' }}>On this website:</strong> We use{' '}
+              <a
+                href="https://umami.is"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#D4A574' }}
+                className="hover:opacity-70 transition-opacity underline"
+              >
+                Umami
+              </a>
+              , a privacy-focused, cookieless analytics tool. It does not collect personally
+              identifiable information (PII) and is fully GDPR compliant. We use it solely to
+              understand aggregate traffic patterns (e.g. page views, referrers).
             </p>
           </Section>
 
@@ -120,9 +136,6 @@ function Privacy() {
               <li><strong style={{ color: '#1A1A1A' }}>Cleveland Museum of Art</strong> — open-access CC0 artwork</li>
               <li><strong style={{ color: '#1A1A1A' }}>Wikimedia Commons</strong> — Picture of the Day</li>
             </ul>
-            <p className="font-body leading-relaxed mt-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              We do not use any third-party analytics or tracking SDKs.
-            </p>
           </Section>
 
           <Section title="Children">
