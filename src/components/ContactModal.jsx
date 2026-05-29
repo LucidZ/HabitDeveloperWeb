@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const FORMSPARK_FORM_ID = 'UYtrJ0oQz';
 const BOTPOISON_PUBLIC_KEY = 'pk_0b5ee14f-cc9f-41ed-badb-3a63058d8f36';
 
-function ContactModal({ isOpen, onClose }) {
+function ContactModal({ isOpen, onClose, source }) {
   const [formData, setFormData] = useState({ email: '', subject: '', message: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
@@ -25,8 +25,17 @@ function ContactModal({ isOpen, onClose }) {
   }, [isOpen]);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
-    return () => { document.body.style.overflow = 'unset'; };
+    if (!isOpen) return;
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY);
+    };
   }, [isOpen]);
 
   const handleClose = () => {
@@ -63,6 +72,7 @@ function ContactModal({ isOpen, onClose }) {
       const payload = {
         ...rest,
         _source: 'Habit Developer Support',
+        ...(source && { source }),
         ...(botpoisonSolution && { _botpoison: botpoisonSolution.solution }),
       };
 
@@ -101,8 +111,12 @@ function ContactModal({ isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(6px)' }}
+      className="fixed inset-0 z-50 flex items-center justify-center"
+      style={{
+        backgroundColor: 'rgba(0,0,0,0.75)',
+        backdropFilter: 'blur(6px)',
+        padding: 'max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom))',
+      }}
       onClick={handleClose}
     >
       <div

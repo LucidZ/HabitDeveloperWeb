@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import ContactModal from '../components/ContactModal';
 
 const FAQ = [
@@ -32,9 +32,12 @@ const FAQ = [
 
 function Support() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+  const source = searchParams.get('source');
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (source) setModalOpen(true);
   }, []);
 
   return (
@@ -147,7 +150,7 @@ function Support() {
       </main>
 
       <Footer />
-      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} source={source} />
     </div>
   );
 }
