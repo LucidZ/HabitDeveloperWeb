@@ -38,7 +38,7 @@ function Privacy() {
                 Privacy Policy
               </h1>
               <p className="font-body text-sm mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                Habit Developer · Last updated: May 2026
+                Habit Developer · Last updated: June 2026
               </p>
             </div>
           </div>
@@ -85,11 +85,53 @@ function Privacy() {
 
           <Section title="Analytics">
             <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              <strong style={{ color: '#1A1A1A' }}>In the app:</strong> We do not collect any
-              personal data or usage analytics from within the app. The only analytics we use are
-              Apple's App Store Connect aggregate statistics (downloads, crash reports), which Apple
-              provides automatically and do not include any personally identifiable information. We
-              do not use any third-party analytics or tracking SDKs in the app.
+              <strong style={{ color: '#1A1A1A' }}>In the app:</strong> We use{' '}
+              <a
+                href="https://telemetrydeck.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#D4A574' }}
+                className="hover:opacity-70 transition-opacity underline"
+              >
+                TelemetryDeck
+              </a>
+              , a privacy-preserving analytics service, to collect a small number of pseudonymous
+              usage signals. The only events we track are:
+            </p>
+            <ul className="font-body leading-relaxed list-disc pl-5 space-y-2 mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              <li>
+                <strong style={{ color: '#1A1A1A' }}>Habit completed</strong> — when a habit is
+                marked done, including which photo source was used, the mood/category selected,
+                and the current streak count
+              </li>
+              <li>
+                <strong style={{ color: '#1A1A1A' }}>Paywall viewed</strong> — when the
+                subscription screen is shown
+              </li>
+              <li>
+                <strong style={{ color: '#1A1A1A' }}>Subscription started</strong> — when a user
+                begins a subscription
+              </li>
+            </ul>
+            <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              TelemetryDeck is cookieless and does not collect or store IP addresses or device
+              identifiers. The only user identifier sent is a randomly generated UUID created on
+              first install and stored on your device — it is not linked to your Apple or Google
+              account, email address, or IDFA. TelemetryDeck hashes all identifiers server-side
+              before storage, so no raw identifiers are retained. No App Tracking Transparency
+              (ATT) prompt is required or shown. This approach is designed to be
+              privacy-preserving and does not require a consent banner under GDPR or CCPA.
+              Event data is retained by TelemetryDeck per{' '}
+              <a
+                href="https://telemetrydeck.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#D4A574' }}
+                className="hover:opacity-70 transition-opacity underline"
+              >
+                their privacy policy
+              </a>
+              .
             </p>
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               <strong style={{ color: '#1A1A1A' }}>On this website:</strong> We use{' '}
@@ -135,6 +177,7 @@ function Privacy() {
               <li><strong style={{ color: '#1A1A1A' }}>Pexels</strong> — curated stock photography</li>
               <li><strong style={{ color: '#1A1A1A' }}>Cleveland Museum of Art</strong> — open-access CC0 artwork</li>
               <li><strong style={{ color: '#1A1A1A' }}>Wikimedia Commons</strong> — Picture of the Day</li>
+              <li><strong style={{ color: '#1A1A1A' }}>TelemetryDeck</strong> — privacy-preserving in-app analytics (see Analytics section above)</li>
             </ul>
           </Section>
 

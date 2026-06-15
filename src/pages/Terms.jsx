@@ -38,7 +38,7 @@ function Terms() {
                 Terms of Use
               </h1>
               <p className="font-body text-sm mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                Habit Developer · Last updated: May 26, 2026
+                Habit Developer · Last updated: June 15, 2026
               </p>
             </div>
           </div>
@@ -260,6 +260,19 @@ function Terms() {
                 Because all data is stored locally, you control it entirely. To delete your data,
                 uninstall the App. There is no account to deactivate and no server-side data to
                 request deletion of.
+              </p>
+            </Subsection>
+            <Subsection title="7.8 In-App Analytics">
+              <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+                The App sends a small number of pseudonymous usage events to TelemetryDeck, a
+                privacy-preserving analytics service. Events are limited to habit completions
+                (including photo source, mood/category, and current streak count), paywall views,
+                and subscription starts. No personal data, device identifiers, IP addresses, or
+                cookies are collected or transmitted. The only identifier used is a randomly
+                generated install UUID stored on your device; it is hashed server-side before
+                storage and is not linked to your identity, Apple or Google account, or IDFA. No
+                App Tracking Transparency (ATT) consent is required. Event data is retained by
+                TelemetryDeck per their privacy policy.
               </p>
             </Subsection>
           </Section>
@@ -494,9 +507,11 @@ function Terms() {
             <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
               If you are a California resident, you may have additional rights under the California
               Consumer Privacy Act ("CCPA"). Because the App stores all data locally on your device
-              and we do not collect, sell, or share personal information as defined by the CCPA in
-              the course of normal App usage, most CCPA rights — including access, deletion, and
-              opt-out of sale — are satisfied by design.
+              and we do not sell or share personal information as defined by the CCPA, most CCPA
+              rights — including access, deletion, and opt-out of sale — are satisfied by design.
+              The App does send pseudonymous usage events to TelemetryDeck for analytics purposes
+              (see Section 7.8); those events contain no personal information and TelemetryDeck
+              does not sell or share them.
             </p>
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               Note that when the App fetches curated photos from third-party services (see Section
