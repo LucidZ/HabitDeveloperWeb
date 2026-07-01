@@ -444,6 +444,9 @@ function Home() {
             <Link to="/terms" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
               Terms
             </Link>
+            <Link to="/acknowledgements" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
+              Acknowledgements
+            </Link>
           </div>
         </div>
       </footer>
