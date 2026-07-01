@@ -38,7 +38,7 @@ function Terms() {
                 Terms of Use
               </h1>
               <p className="font-body text-sm mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                Habit Developer · Last updated: June 15, 2026
+                Habit Developer · Last updated: July 1, 2026
               </p>
             </div>
           </div>
@@ -64,8 +64,8 @@ function Terms() {
               These Terms apply to all users of the App, regardless of platform. Your continued use of
               the App following any update to these Terms constitutes acceptance of the revised Terms.
               We will notify you of material changes by updating the "Last Updated" date above
-              and, where practicable, by providing notice through an in-app notification or
-              other reasonable means prior to the change taking effect.
+              and by providing notice through an in-app notification or other reasonable means
+              at least 15 days before the change takes effect.
             </p>
           </Section>
 
@@ -79,9 +79,11 @@ function Terms() {
 
           <Section title="3. Eligibility">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              You must be at least 13 years of age to use the App. If you are between 13 and 18, you
-              must have consent from a parent or legal guardian. By using the App, you represent that
-              you meet these requirements.
+              You must be at least 13 years of age to use the App. If you are between 13 and 18,
+              you must have consent from a parent or legal guardian, and by using the App you
+              represent that your parent or legal guardian has reviewed and consented to these
+              Terms on your behalf. By using the App, you represent that you meet these
+              eligibility requirements.
             </p>
           </Section>
 
@@ -106,13 +108,6 @@ function Terms() {
               <p className="font-body leading-relaxed mt-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 Current pricing is displayed in the App before purchase. Prices may vary by region
                 and are set in accordance with Apple App Store or Google Play Store pricing tiers.
-              </p>
-            </Subsection>
-            <Subsection title="4.3 Free Trials">
-              <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-                If a free trial is offered, the trial duration and what happens at its conclusion
-                will be clearly disclosed before you subscribe. Payment is charged at the end of
-                the trial period unless you cancel before it expires.
               </p>
             </Subsection>
           </Section>
@@ -233,8 +228,10 @@ function Terms() {
               <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 When you use curated photo collections, the App fetches images from the following
                 third-party services. As with any internet request, your IP address is transmitted
-                to these services as part of standard internet protocol; no other identifying data
-                is included in these requests:
+                to these services as part of standard internet protocol. While we do not send any
+                other identifying information, we note that an IP address may itself constitute
+                personal data under GDPR and other applicable privacy laws; each service's own
+                privacy policy governs how it handles that data:
               </p>
               <ul className="font-body leading-relaxed list-disc pl-5 space-y-2" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 <li><strong style={{ color: '#1A1A1A' }}>Pexels</strong> (pexels.com) — curated photography</li>
@@ -251,8 +248,10 @@ function Terms() {
             <Subsection title="7.6 Over-the-Air Updates">
               <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 The App uses Expo Updates to deliver bug fixes and improvements without requiring a
-                full App Store update. These updates may be applied silently in the background. No
-                personal data is transmitted during this process.
+                full App Store update. These updates may be applied silently in the background.
+                During this process, basic app metadata (such as app version and runtime
+                information) is transmitted to Expo's servers to determine which update to
+                deliver. No personal data is transmitted during this process.
               </p>
             </Subsection>
             <Subsection title="7.7 Data Portability and Deletion">
@@ -265,14 +264,16 @@ function Terms() {
             <Subsection title="7.8 In-App Analytics">
               <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 The App sends a small number of pseudonymous usage events to TelemetryDeck, a
-                privacy-preserving analytics service. Events are limited to habit completions
-                (including photo source, mood/category, and current streak count), paywall views,
-                and subscription starts. No personal data, device identifiers, IP addresses, or
-                cookies are collected or transmitted. The only identifier used is a randomly
-                generated install UUID stored on your device; it is hashed server-side before
-                storage and is not linked to your identity, Apple or Google account, or IDFA. No
-                App Tracking Transparency (ATT) consent is required. Event data is retained by
-                TelemetryDeck per their privacy policy.
+                privacy-preserving analytics service acting as our data processor. Events are
+                limited to habit completions (including photo source, mood/category, and current
+                streak count), paywall views, and subscription starts. No personal data,
+                cross-app device identifiers (such as IDFA or GAID), IP addresses, or cookies are
+                collected or transmitted. The only identifier used is a UUID generated by the app
+                itself on first install and stored solely within the app; it is
+                hashed server-side before storage and is not shared with or linked to any other
+                app, service, or account, including your identity, Apple or Google account, or
+                IDFA. No App Tracking Transparency (ATT) consent is required.
+                Event data is retained by TelemetryDeck per their privacy policy.
               </p>
             </Subsection>
           </Section>
@@ -355,11 +356,11 @@ function Terms() {
 
           <Section title="13. Indemnification">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              You agree to indemnify, defend, and hold harmless Javi Labs LLC from and against any
-              claims, liabilities, damages, losses, and expenses (including legal fees) arising out
-              of your use of the App in violation of these Terms. This section does not apply to
-              consumers in jurisdictions where such indemnification obligations are prohibited or
-              limited by applicable law.
+              If you use the App for commercial or business purposes, you agree to indemnify,
+              defend, and hold harmless Javi Labs LLC from and against any claims, liabilities,
+              damages, losses, and expenses (including legal fees) arising out of that use in
+              violation of these Terms. This section does not apply to use of the App for
+              personal, non-commercial purposes.
             </p>
           </Section>
 
@@ -378,12 +379,17 @@ function Terms() {
 
           <Section title="15. Changes to the App">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
-              We reserve the right to modify, suspend, or discontinue the App or any feature at any
-              time. Where practicable, we will provide advance notice of material changes. If we
-              permanently discontinue the App, we will provide reasonable advance notice and, where
-              required by applicable law, offer pro-rated refunds to active paid subscribers for
-              unused subscription periods. We are not otherwise liable to you or any third party
-              for any modification, suspension, or discontinuation of the App.
+              We reserve the right to modify, suspend, or discontinue the App or any feature at
+              any time. We will provide at least 15 days' advance notice of material changes
+              where reasonably possible. If we permanently discontinue the App, we will provide at
+              least 30 days' advance notice through the App or other reasonable means, together
+              with instructions for cancelling your subscription to avoid further charges. Apple
+              and Google, not us, control and process subscription billing and refunds — we have
+              no ability to cancel your subscription or issue a refund directly. Where possible,
+              we will request that Apple or Google issue a pro-rated refund to active subscribers
+              for the unused portion of their subscription, but the final decision rests with the
+              platform. We are not otherwise liable to you or any third party for any
+              modification, suspension, or discontinuation of the App.
             </p>
           </Section>
 
@@ -469,7 +475,28 @@ function Terms() {
             </Subsection>
           </Section>
 
-          <Section title="18. Severability">
+          <Section title="18. Google Play-Specific Terms">
+            <p className="font-body leading-relaxed mb-6" style={{ color: 'rgba(0,0,0,0.65)' }}>
+              The following terms apply to App versions downloaded from the Google Play Store, if
+              and when the App becomes available there.
+            </p>
+            <Subsection title="18.1 Billing">
+              <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+                Purchases and subscriptions made through the Google Play Store are billed and
+                processed entirely by Google. Google Play's Terms of Service govern the purchase
+                transaction itself.
+              </p>
+            </Subsection>
+            <Subsection title="18.2 No Responsibility">
+              <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
+                Google has no responsibility or liability for the App or its content. Javi Labs
+                LLC, not Google, is solely responsible for the App, its maintenance and support,
+                and any claims relating to your use of it.
+              </p>
+            </Subsection>
+          </Section>
+
+          <Section title="19. Severability">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               If any provision of these Terms is found to be invalid or unenforceable, that
               provision will be limited or eliminated to the minimum extent necessary, and the
@@ -477,23 +504,25 @@ function Terms() {
             </p>
           </Section>
 
-          <Section title="19. Miscellaneous">
-            <Subsection title="19.1 Assignment">
+          <Section title="20. Miscellaneous">
+            <Subsection title="20.1 Assignment">
               <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 You may not assign or transfer your rights or obligations under these Terms without
                 our prior written consent. We may assign these Terms in connection with a merger,
                 acquisition, reorganization, or sale of assets, or by operation of law, without
-                your consent.
+                your consent. Any successor will be required to honor the privacy commitments in
+                our Privacy Policy as of the date of transfer, or to provide affected users advance
+                notice and an opportunity to delete their data.
               </p>
             </Subsection>
-            <Subsection title="19.2 No Waiver">
+            <Subsection title="20.2 No Waiver">
               <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 Our failure to enforce any right or provision of these Terms will not constitute a
                 waiver of that right or provision. Any waiver must be in writing and signed by an
                 authorized representative of Javi Labs LLC to be effective.
               </p>
             </Subsection>
-            <Subsection title="19.3 Export Controls">
+            <Subsection title="20.3 Export Controls">
               <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
                 You agree to comply with all applicable export control laws and regulations. You
                 represent that you are not located in, under the control of, or a national or
@@ -503,7 +532,7 @@ function Terms() {
             </Subsection>
           </Section>
 
-          <Section title="20. California Residents">
+          <Section title="21. California Residents">
             <p className="font-body leading-relaxed mb-3" style={{ color: 'rgba(0,0,0,0.65)' }}>
               If you are a California resident, you may have additional rights under the California
               Consumer Privacy Act ("CCPA"). Because the App stores all data locally on your device
@@ -516,12 +545,20 @@ function Terms() {
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               Note that when the App fetches curated photos from third-party services (see Section
               7.5), your IP address is transmitted to those third parties as part of standard
-              internet protocol. We do not control how those services handle that information. To
-              exercise any CCPA rights, contact us using the link in the Contact section below.
+              internet protocol. We do not control how those services handle that information. This
+              section is also summarized in our{' '}
+              <Link
+                to="/privacy"
+                style={{ color: '#D4A574' }}
+                className="hover:opacity-70 transition-opacity underline"
+              >
+                Privacy Policy
+              </Link>
+              . To exercise any CCPA rights, contact us using the link in the Contact section below.
             </p>
           </Section>
 
-          <Section title="21. Entire Agreement">
+          <Section title="22. Entire Agreement">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               These Terms, together with our{' '}
               <Link
@@ -536,7 +573,7 @@ function Terms() {
             </p>
           </Section>
 
-          <Section title="22. Contact">
+          <Section title="23. Contact">
             <p className="font-body leading-relaxed" style={{ color: 'rgba(0,0,0,0.65)' }}>
               Questions about these Terms?{' '}
               <button
@@ -616,6 +653,9 @@ function Footer() {
           </Link>
           <Link to="/support" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
             Support
+          </Link>
+          <Link to="/acknowledgements" className="font-body text-sm hover:opacity-70 transition-opacity" style={{ color: 'rgba(0,0,0,0.45)' }}>
+            Acknowledgements
           </Link>
         </div>
       </div>
