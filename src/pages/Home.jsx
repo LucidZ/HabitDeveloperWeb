@@ -1,5 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { QRCodeSVG } from 'qrcode.react';
+
+const APP_STORE_URL = 'https://apps.apple.com/app/id6759990379';
+
+/* ─── Tracks whether the viewport is desktop-sized (matches the md breakpoint used for layout elsewhere on this page) ─── */
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(
+    () => window.matchMedia('(min-width: 768px)').matches
+  );
+  useEffect(() => {
+    const mql = window.matchMedia('(min-width: 768px)');
+    const onChange = (e) => setIsDesktop(e.matches);
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, []);
+  return isDesktop;
+}
 
 /* ─── Intersection observer hook for scroll-in animations ─── */
 function useInView(threshold = 0.15) {
@@ -81,12 +98,41 @@ function StepCard({ number, title, body, delay = 0 }) {
   );
 }
 
-/* ─── App Store badge (placeholder until live) ─── */
-function AppStoreBadge() {
+/* ─── App Store badge — QR code on desktop (can't install from a laptop), direct link on mobile ─── */
+function AppStoreBadge({ dark = false }) {
+  const isDesktop = useIsDesktop();
+
+  if (isDesktop) {
+    return (
+      <a
+        href={APP_STORE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Scan the QR code with your iPhone to download Habit Developer on the App Store"
+        className="inline-flex flex-col items-center gap-2 group"
+      >
+        <div
+          className="p-3 rounded-xl transition-opacity group-hover:opacity-80"
+          style={{ backgroundColor: '#FFFFFF', boxShadow: '0 4px 14px rgba(0,0,0,0.18)' }}
+        >
+          <QRCodeSVG value={APP_STORE_URL} size={104} fgColor="#1A1A1A" bgColor="#FFFFFF" />
+        </div>
+        <span
+          className="font-body text-xs"
+          style={{ color: dark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.55)' }}
+        >
+          Scan to get the app on your iPhone
+        </span>
+      </a>
+    );
+  }
+
   return (
     <a
-      href="#"
-      aria-label="Download on the App Store (coming soon)"
+      href={APP_STORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Download on the App Store"
       className="inline-flex items-center gap-3 px-5 py-3 rounded-xl font-body font-medium text-sm transition-opacity hover:opacity-80"
       style={{
         backgroundColor: '#1A1A1A',
@@ -403,7 +449,7 @@ function Home() {
             Your first 2 habits are free — forever. Ready to build more? Unlock unlimited habits
             with an annual subscription.
           </p>
-          <AppStoreBadge />
+          <AppStoreBadge dark />
           <p className="font-body text-xs mt-5" style={{ color: 'rgba(255,255,255,0.3)' }}>
             iOS only · Requires iOS 17+
           </p>
